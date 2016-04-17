@@ -1,0 +1,2 @@
+﻿Versão 1.0.0 - (16/04/2016)
+* Primeiro release do addon by Frederico Duarte

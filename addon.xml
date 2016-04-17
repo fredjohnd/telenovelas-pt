@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.telenovelasPT" name="Telenovelas PT" version="1.0.0" provider-name="Frederico Duarte">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.addon.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="5.0.0"/>
+  </requires>
+	
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+	
+  <extension point="xbmc.addon.metadata">
+    <language>en</language>
+    <platform>all</platform>
+    <summary lang="en">Telenovelas PT</summary>
+    <description lang="pt">Veja as telenovelas portuguesas aqui: A única mulher, A regra do jogo, Coração douro, I love it, Santa Bárbara, I love paraisópolis, Poderosas, Império, Mulheres, O beijo do escorpião,Água de mar..
+    </description>
+    <description lang="en">Watch portuguese telenovelas.</description>
+    <platform>all</platform>
+  </extension>
+</addon>

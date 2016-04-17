@@ -1,2 +1,2 @@
 # telenovelas-pt
-A kodi addon
+A kodi addon to watch portuguese telenovelas
