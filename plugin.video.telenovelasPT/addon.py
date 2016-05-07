@@ -14,6 +14,7 @@ selfAddon   = xbmcaddon.Addon(id=addon_id)
 addonfolder = selfAddon.getAddonInfo('path')
 artfolder   = addonfolder + '/resources/img/'
 fanart      = addonfolder + '/fanart.jpg'
+base 		= 'http://tvstoryoficialportugaltv.blogspot.co.uk/'
 
 # All these shows are on an external website so we don't want to display them
 def isExternal(title):
@@ -31,13 +32,9 @@ def slugify(value):
 	value = value.replace(' ', '-')
 	return value.lower()
 
-def mainMenu(*s):
+def mainMenu():
 
-		bs = bd(getB(), len(s))
-		print bs
-		bs2 = r(bs)[0:16] + "i" + r(bs)[16:]
-		print "BSSSS " + bs2
-		link = openURL(bs2)
+		link = openURL(base)
 		link = unicode(link, 'latin-1', errors='replace')
 		soup = BeautifulSoup(link)
 		novelasElements = soup.find('div',{ "id" : "PageList3" }).findAll('a')
@@ -234,7 +231,6 @@ def openURL(url):
 		response.close()
 		return link
 
-def bd(s, l): return base64.b64decode(s.replace(')', str(l)))
 
 def cleanHtml(dirty):
     clean = re.sub('&quot;', '\"', dirty)
@@ -274,12 +270,6 @@ def get_params():
                                 
         return param
 
-def r(s):
-	return s.decode('utf8', 'ignore').decode('rot13')
-
-def getB():
-	return 'dWdnYzovL)dpZmdiZWxic4Zwdm55Y)JlZ)h0bnkyMDE)Lm95YnRmY)JnLnBiLmh4Ly8=='
-
 params    = get_params()
 url       = None
 name      = None
@@ -303,7 +293,7 @@ print "URL      : " + str(url)
 print "Name     : " + str(name)
 print "Iconimage: " + str(iconimage)
 
-if   mode == None : mainMenu(7, 3)
+if   mode == None : mainMenu()
 elif mode < 1000  :	getEpisodes(url, iconimage)
 elif mode == 1000 :	doPlay(url, name, iconimage)
 	
